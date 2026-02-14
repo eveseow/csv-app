@@ -2,13 +2,6 @@
 
 A web application for uploading CSV files, displaying data in a responsive table with search and pagination features.
 
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Troubleshooting](#troubleshooting)
-
 ## 📦 Prerequisites
 
 Before you begin, ensure you have the following installed:
