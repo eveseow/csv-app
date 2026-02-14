@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 20px;
+}
+
+.app {
+  width: 90%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Upload Section */
+.upload-section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.file-input-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  flex: 1;
+  padding: 10px;
+  border: 2px dashed #667eea;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.file-name {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: #28a745;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c82333;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.control-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.control-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-weight: 500;
+}
+
+.limit-select {
+  padding: 8px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  table-layout: auto;
+}
+
+.data-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* ID Column - no wrap, compact */
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+  white-space: nowrap;
+  width: 1%;
+}
+
+/* Post ID Column - no wrap, compact */
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  white-space: nowrap;
+  width: 1%;
+}
+
+/* Name Column - can wrap */
+.data-table th:nth-child(3),
+.data-table td:nth-child(3) {
+  white-space: normal;
+  word-wrap: break-word;
+  min-width: 150px;
+}
+
+/* Email Column - no wrap, show full email */
+.data-table th:nth-child(4),
+.data-table td:nth-child(4) {
+  white-space: nowrap;
+  min-width: 200px;
+}
+
+/* Body Column - can wrap to multiple lines */
+.data-table th:nth-child(5),
+.data-table td:nth-child(5) {
+  white-space: normal;
+  word-wrap: break-word;
+  min-width: 300px;
+}
+
+.data-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pagination-info {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.page-info {
+  color: #666;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+/* Loading and No Data States */
+.loading,
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.loading {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .app {
+    width: 95%;
+  }
+
+  .container {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .file-input-wrapper {
+    flex-direction: column;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+
+  .data-table {
+    font-size: 0.85rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px 10px;
+  }
+
+  /* Keep ID, Post ID, and Email as single line even on mobile */
+  .data-table th:nth-child(1),
+  .data-table td:nth-child(1) {
+    white-space: nowrap;
+  }
+
+  .data-table th:nth-child(2),
+  .data-table td:nth-child(2) {
+    white-space: nowrap;
+  }
+
+  .data-table th:nth-child(4),
+  .data-table td:nth-child(4) {
+    white-space: nowrap;
+    min-width: 180px;
+  }
+
+  /* Name and Body can wrap */
+  .data-table th:nth-child(3),
+  .data-table td:nth-child(3) {
+    min-width: 120px;
+  }
+
+  .data-table th:nth-child(5),
+  .data-table td:nth-child(5) {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .upload-section {
+    padding: 15px;
+  }
+
+  .data-table {
+    font-size: 0.75rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 6px 8px;
+  }
+
+  .data-table th:nth-child(4),
+  .data-table td:nth-child(4) {
+    min-width: 160px;
+  }
+
+  .data-table th:nth-child(5),
+  .data-table td:nth-child(5) {
+    min-width: 200px;
+  }
+}
